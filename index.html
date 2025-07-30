@@ -3,98 +3,103 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Super SUS</title>
+  <title>Tacticool Shop</title>
   <style>
     body {
-      margin: 0;
+      background: #000;
+      color: white;
       font-family: Arial, sans-serif;
-      background: #0b0b0b;
+      margin: 0;
+      padding: 0;
+    }
+
+    /* Шапка */
+    .header img {
+      display: block;
+      margin: 20px auto;
+      border-radius: 20px;
+      width: 95%;
+      max-width: 1200px;
+    }
+
+    /* Хлебные крошки */
+    .breadcrumb {
+      text-align: left;
+      margin: 10px 5%;
+      font-size: 18px;
+    }
+
+    .breadcrumb a {
+      color: #bbb;
+      text-decoration: none;
+    }
+
+    .breadcrumb a:hover {
       color: #fff;
     }
 
-    header {
-      display: flex;
-      align-items: center;
-      padding: 20px;
-      background: #0b0b0b;
+    /* Кнопки */
+    .buttons {
+      margin: 20px 0;
+      text-align: center;
     }
 
-    header img {
-      width: 60px;
-      border-radius: 12px;
-      margin-right: 15px;
-    }
-
-    header h1 {
-      font-size: 28px;
-      font-weight: bold;
-      margin-right: 30px;
-    }
-
-    nav {
-      display: flex;
-      gap: 10px;
-    }
-
-    nav button {
-      background: #111;
-      color: #fff;
-      border: none;
-      padding: 10px 16px;
+    .buttons button {
+      background: none;
+      color: white;
+      border: 2px solid #d1ff00;
       border-radius: 8px;
+      padding: 10px 20px;
+      margin: 5px;
       cursor: pointer;
-      font-weight: bold;
+      font-size: 16px;
       transition: 0.2s;
     }
 
-    nav button:hover {
-      background: #222;
+    .buttons button.active,
+    .buttons button:hover {
+      background: #d1ff00;
+      color: black;
     }
 
-    .container {
+    /* Магазин */
+    .shop-container {
       display: flex;
-      justify-content: center;
-      align-items: flex-start;
       gap: 20px;
+      flex-wrap: wrap;
+      justify-content: center;
       padding: 20px;
     }
 
     .products {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-      gap: 20px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
       flex: 2;
+      justify-content: center;
     }
 
     .product {
       background: #111;
-      padding: 15px;
-      border-radius: 12px;
+      padding: 10px;
+      border-radius: 10px;
+      width: 180px;
       text-align: center;
-      box-shadow: 0 0 10px rgba(184, 0, 216, 0.3);
-      transition: transform 0.2s ease, box-shadow 0.3s ease;
-    }
-
-    .product:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 0 20px rgba(184, 0, 216, 0.6);
+      transition: 0.3s;
     }
 
     .product img {
-      width: 80px;
-      height: 80px;
-      object-fit: contain;
+      width: 100%;
+      border-radius: 6px;
     }
 
-    .title {
-      margin: 10px 0 5px;
-      font-weight: bold;
+    .product p {
+      margin: 10px 0;
     }
 
     .price {
-      color: #d7ff48;
-      margin-bottom: 10px;
-      font-size: 16px;
+      color: #ffe600;
+      margin: 5px 0;
       font-weight: bold;
     }
 
@@ -102,34 +107,25 @@
       background: #b800d8;
       color: white;
       border: none;
-      padding: 8px 14px;
+      padding: 6px 10px;
+      border-radius: 5px;
       cursor: pointer;
-      border-radius: 6px;
-      font-weight: bold;
-      transition: 0.2s;
     }
 
     .add-to-cart:hover {
       background: #d44aff;
     }
 
+    /* Корзина */
     .cart {
-      background: #111;
-      padding: 20px;
+      flex: 1;
+      background: #181818;
+      padding: 15px;
       border-radius: 12px;
-      width: 280px;
-      max-height: 500px;
+      max-height: 450px;
       display: flex;
       flex-direction: column;
       box-shadow: 0 0 15px rgba(184, 0, 216, 0.3);
-    }
-
-    .cart h3 {
-      margin-top: 0;
-      font-size: 18px;
-      display: flex;
-      align-items: center;
-      gap: 5px;
     }
 
     .cart-items {
@@ -160,12 +156,11 @@
     #checkout {
       background: #b800d8;
       border: none;
-      padding: 12px;
+      padding: 10px;
       cursor: pointer;
       border-radius: 6px;
       font-weight: bold;
       color: white;
-      transition: 0.2s;
     }
 
     #checkout:hover {
@@ -174,41 +169,53 @@
   </style>
 </head>
 <body>
-  <header>
-    <img src="https://upload.wikimedia.org/wikipedia/commons/7/7e/Among_Us_icon.png" alt="logo" />
-    <h1>Super SUS</h1>
-    <nav>
-      <button>Все товары</button>
-      <button>Карты</button>
-      <button>Золотые звезды</button>
-      <button>Пропуски</button>
-    </nav>
-  </header>
+  <!-- Шапка -->
+  <div class="header">
+    <img src="tacticool.jpg" alt="Tacticool" />
+  </div>
 
-  <div class="container">
+  <!-- Хлебные крошки -->
+  <div class="breadcrumb">
+    <a href="index.html">Главная</a> / <span>Tacticool</span>
+  </div>
+
+  <!-- Кнопки фильтра -->
+  <div class="buttons">
+    <button class="filter-btn active" data-filter="all">Все товары</button>
+    <button class="filter-btn" data-filter="limited">Лимитированная коллекция</button>
+    <button class="filter-btn" data-filter="regular">Товары</button>
+  </div>
+
+  <!-- Магазин -->
+  <div class="shop-container">
     <div class="products">
-      <div class="product" data-name="Супер пропуск" data-price="386">
-        <img src="https://via.placeholder.com/80" alt="Супер пропуск" />
-        <p class="title">Супер пропуск</p>
-        <p class="price">386 ₽</p>
+      <div class="product" data-category="regular" data-name="Товар 1" data-price="100">
+        <img src="https://via.placeholder.com/150" />
+        <p>Товар 1</p>
+        <p class="price">100 ₽</p>
         <button class="add-to-cart">+</button>
       </div>
-
-      <div class="product" data-name="Набор Супер пропуска" data-price="721">
-        <img src="https://via.placeholder.com/80" alt="Набор Супер пропуска" />
-        <p class="title">Набор Супер пропуска</p>
-        <p class="price">721 ₽</p>
+      <div class="product" data-category="limited" data-name="Товар 2" data-price="250">
+        <img src="https://via.placeholder.com/150" />
+        <p>Товар 2 (Лимит)</p>
+        <p class="price">250 ₽</p>
         <button class="add-to-cart">+</button>
       </div>
-
-      <div class="product" data-name="100 Звёзд" data-price="75">
-        <img src="https://via.placeholder.com/80" alt="100 Звёзд" />
-        <p class="title">100 Золотые звёзды</p>
-        <p class="price">75 ₽</p>
+      <div class="product" data-category="regular" data-name="Товар 3" data-price="300">
+        <img src="https://via.placeholder.com/150" />
+        <p>Товар 3</p>
+        <p class="price">300 ₽</p>
+        <button class="add-to-cart">+</button>
+      </div>
+      <div class="product" data-category="limited" data-name="Товар 4" data-price="500">
+        <img src="https://via.placeholder.com/150" />
+        <p>Товар 4 (Лимит)</p>
+        <p class="price">500 ₽</p>
         <button class="add-to-cart">+</button>
       </div>
     </div>
 
+    <!-- Корзина -->
     <div class="cart">
       <h3>🛒 Корзина <span id="cart-total">0 ₽</span></h3>
       <div class="cart-items"></div>
@@ -218,11 +225,29 @@
 
   <script>
     document.addEventListener("DOMContentLoaded", () => {
-      const addToCartBtns = document.querySelectorAll(".add-to-cart");
+      const buttons = document.querySelectorAll(".filter-btn");
+      const products = document.querySelectorAll(".product");
       const cartItems = document.querySelector(".cart-items");
       const cartTotal = document.querySelector("#cart-total");
       let total = 0;
 
+      // Фильтр
+      buttons.forEach(btn => {
+        btn.addEventListener("click", () => {
+          buttons.forEach(b => b.classList.remove("active"));
+          btn.classList.add("active");
+          const filter = btn.dataset.filter;
+          products.forEach(prod => {
+            if (filter === "all" || prod.dataset.category === filter) {
+              prod.style.display = "block";
+            } else {
+              prod.style.display = "none";
+            }
+          });
+        });
+      });
+
+      // Корзина
       function updateTotal() {
         cartTotal.textContent = total + " ₽";
       }
@@ -231,27 +256,24 @@
         const item = document.createElement("div");
         item.classList.add("cart-item");
         item.innerHTML = `${name} - ${price} ₽ <button>✖</button>`;
-
         item.querySelector("button").addEventListener("click", () => {
           total -= price;
           item.remove();
           updateTotal();
         });
-
         cartItems.appendChild(item);
         total += price;
         updateTotal();
       }
 
-      addToCartBtns.forEach(btn => {
-        btn.addEventListener("click", (e) => {
+      document.querySelectorAll(".add-to-cart").forEach(btn => {
+        btn.addEventListener("click", e => {
           const product = e.target.closest(".product");
-          const name = product.dataset.name;
-          const price = parseInt(product.dataset.price);
-          addToCart(name, price);
+          addToCart(product.dataset.name, parseInt(product.dataset.price));
         });
       });
     });
   </script>
 </body>
 </html>
+
