@@ -11,17 +11,17 @@
       font-family: Arial, sans-serif;
       margin: 0;
       padding: 0;
-      min-height: 100vh; /* убираем белый фон снизу */
+      min-height: 100vh;
     }
 
     .header img {
       display: block;
       width: 95%;
       max-width: 1400px;
-      height: 350px; /* фиксированная высота */
-      object-fit: cover; /* картинка не искажается, обрезается */
+      height: 350px;
+      object-fit: cover;
       margin: 20px auto;
-      border-radius: 25px; /* скруглённые края */
+      border-radius: 25px;
     }
 
     .breadcrumb {
@@ -71,18 +71,16 @@
     }
 
     .products {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 15px;
+      display: grid;
+      grid-template-columns: repeat(6, 1fr); /* 6 в ряд */
+      gap: 20px;
       flex: 2;
-      justify-content: center;
     }
 
     .product {
       background: #111;
       padding: 10px;
       border-radius: 10px;
-      width: 180px;
       text-align: center;
       transition: 0.3s;
     }
@@ -178,28 +176,87 @@
 
   <div class="shop-container">
     <div class="products">
-      <div class="product" data-category="regular" data-name="Товар 1" data-price="100">
+      <div class="product" data-category="regular" data-name="27,000 + 3,000 gold" data-price="109.99">
         <img src="https://via.placeholder.com/150" />
-        <p>Товар 1</p>
-        <p class="price">100 ₽</p>
+        <p>27,000 + 3,000 gold</p>
+        <p class="price">$ 109.99</p>
         <button class="add-to-cart">+</button>
       </div>
-      <div class="product" data-category="limited" data-name="Товар 2" data-price="250">
+
+      <div class="product" data-category="regular" data-name="13,000 + 1,500 gold" data-price="54.99">
         <img src="https://via.placeholder.com/150" />
-        <p>Товар 2 (Лимит)</p>
-        <p class="price">250 ₽</p>
+        <p>13,000 + 1,500 gold</p>
+        <p class="price">$ 54.99</p>
         <button class="add-to-cart">+</button>
       </div>
-      <div class="product" data-category="regular" data-name="Товар 3" data-price="300">
+
+      <div class="product" data-category="regular" data-name="5000 + 500 gold" data-price="21.99">
         <img src="https://via.placeholder.com/150" />
-        <p>Товар 3</p>
-        <p class="price">300 ₽</p>
+        <p>5000 + 500 gold</p>
+        <p class="price">$ 21.99</p>
         <button class="add-to-cart">+</button>
       </div>
-      <div class="product" data-category="limited" data-name="Товар 4" data-price="500">
+
+      <div class="product" data-category="regular" data-name="2300 + 200 gold" data-price="10.99">
         <img src="https://via.placeholder.com/150" />
-        <p>Товар 4 (Лимит)</p>
-        <p class="price">500 ₽</p>
+        <p>2300 + 200 gold</p>
+        <p class="price">$ 10.99</p>
+        <button class="add-to-cart">+</button>
+      </div>
+
+      <div class="product" data-category="regular" data-name="600 + 50 gold" data-price="3.69">
+        <img src="https://via.placeholder.com/150" />
+        <p>600 + 50 gold</p>
+        <p class="price">$ 3.69</p>
+        <button class="add-to-cart">+</button>
+      </div>
+
+      <div class="product" data-category="regular" data-name="Elite Clan Pass +13,000 Clan Pass Points" data-price="12.49">
+        <img src="https://via.placeholder.com/150" />
+        <p>Elite Clan Pass +13,000 Clan Pass Points</p>
+        <p class="price">$ 12.49</p>
+        <button class="add-to-cart">+</button>
+      </div>
+
+      <div class="product" data-category="regular" data-name="10,000 Clan Pass Points" data-price="5.99">
+        <img src="https://via.placeholder.com/150" />
+        <p>10,000 Clan Pass Points</p>
+        <p class="price">$ 5.99</p>
+        <button class="add-to-cart">+</button>
+      </div>
+
+      <div class="product" data-category="regular" data-name="3,000,000 + 300,000 Silver" data-price="99.99">
+        <img src="https://via.placeholder.com/150" />
+        <p>3,000,000 + 300,000 Silver</p>
+        <p class="price">$ 99.99</p>
+        <button class="add-to-cart">+</button>
+      </div>
+
+      <div class="product" data-category="regular" data-name="1,500,000 + 150,000 Silver" data-price="54.99">
+        <img src="https://via.placeholder.com/150" />
+        <p>1,500,000 + 150,000 Silver</p>
+        <p class="price">$ 54.99</p>
+        <button class="add-to-cart">+</button>
+      </div>
+
+      <div class="product" data-category="regular" data-name="450,000 + 45,000 Silver" data-price="16.99">
+        <img src="https://via.placeholder.com/150" />
+        <p>450,000 + 45,000 Silver</p>
+        <p class="price">$ 16.99</p>
+        <button class="add-to-cart">+</button>
+      </div>
+
+      <div class="product" data-category="regular" data-name="110,000 + 11,000 Silver" data-price="4.99">
+        <img src="https://via.placeholder.com/150" />
+        <p>110,000 + 11,000 Silver</p>
+        <p class="price">$ 4.99</p>
+        <button class="add-to-cart">+</button>
+      </div>
+
+      <div class="product" data-category="regular" data-name="22,000 + 2,200 Silver" data-price="1.19">
+        <img src="https://via.placeholder.com/150" />
+        <p>22,000 + 2,200 Silver</p>
+        <p class="price">$ 1.19</p>
         <button class="add-to-cart">+</button>
       </div>
     </div>
@@ -231,13 +288,13 @@
       });
 
       function updateTotal() {
-        cartTotal.textContent = total + " ₽";
+        cartTotal.textContent = "$ " + total.toFixed(2);
       }
 
       function addToCart(name, price) {
         const item = document.createElement("div");
         item.classList.add("cart-item");
-        item.innerHTML = `${name} - ${price} ₽ <button>✖</button>`;
+        item.innerHTML = `${name} - $${price.toFixed(2)} <button>✖</button>`;
         item.querySelector("button").addEventListener("click", () => {
           total -= price;
           item.remove();
@@ -251,10 +308,11 @@
       document.querySelectorAll(".add-to-cart").forEach(btn => {
         btn.addEventListener("click", e => {
           const product = e.target.closest(".product");
-          addToCart(product.dataset.name, parseInt(product.dataset.price));
+          addToCart(product.dataset.name, parseFloat(product.dataset.price));
         });
       });
     });
   </script>
 </body>
 </html>
+
