@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Tacticool Shop</title>
   <style>
     body {
@@ -10,87 +10,96 @@
       color: #fff;
       font-family: Arial, sans-serif;
       margin: 0;
-      padding: 0;
     }
-    .breadcrumb { margin: 15px 40px; font-size: 16px; }
-    .breadcrumb a { color: #bbb; text-decoration: none; }
-    .breadcrumb a:hover { color: #fff; }
+    .breadcrumb {
+      margin: 10px 20px;
+      font-size: 14px;
+    }
+    .breadcrumb a {
+      color: #bbb;
+      text-decoration: none;
+    }
+    .breadcrumb a:hover {
+      color: #fff;
+    }
     .game-header {
       display: flex;
       align-items: center;
-      margin: 10px 40px;
+      margin: 10px 20px;
     }
     .game-header img {
-      width: 110px;
-      height: 110px;
-      border-radius: 25px;
-      margin-right: 25px;
+      width: 70px;
+      height: 70px;
+      border-radius: 15px;
+      margin-right: 15px;
       object-fit: cover;
-      box-shadow: 0 0 15px rgba(186, 85, 211, 0.7);
+      box-shadow: 0 0 8px rgba(186, 85, 211, 0.7);
     }
     .game-info h1 {
-      font-size: 42px;
+      font-size: 28px;
       margin: 0;
-      text-shadow: 0 0 12px rgba(186, 85, 211, 0.9);
+      text-shadow: 0 0 10px rgba(186, 85, 211, 0.8);
     }
-    .buttons { margin-top: 12px; }
+    .buttons {
+      margin-top: 6px;
+    }
     .buttons button {
       background: none;
       color: #fff;
       border: 2px solid #b455d3;
-      border-radius: 10px;
-      padding: 10px 18px;
-      margin-right: 10px;
+      border-radius: 8px;
+      padding: 6px 12px;
+      margin-right: 6px;
       cursor: pointer;
-      font-size: 16px;
-      box-shadow: 0 0 12px rgba(186, 85, 211, 0.4);
+      font-size: 14px;
+      box-shadow: 0 0 10px rgba(186, 85, 211, 0.3);
       transition: 0.3s;
     }
-    .buttons button.active, .buttons button:hover {
+    .buttons button.active,
+    .buttons button:hover {
       background: #b455d3;
-      box-shadow: 0 0 22px rgba(186, 85, 211, 0.9);
+      box-shadow: 0 0 18px rgba(186, 85, 211, 0.9);
     }
     .shop-container {
       display: flex;
       justify-content: space-between;
       align-items: flex-start;
-      padding: 20px 40px;
+      padding: 10px 20px;
     }
     .products {
       display: grid;
       grid-template-columns: repeat(6, 1fr);
-      gap: 15px;
+      gap: 10px;
       flex: 2;
     }
     .product {
       background: #111;
-      padding: 8px;
-      border-radius: 10px;
+      padding: 6px;
+      border-radius: 8px;
       text-align: center;
       transition: 0.3s;
-      box-shadow: 0 0 10px rgba(186, 85, 211, 0.2);
+      box-shadow: 0 0 8px rgba(186, 85, 211, 0.3);
     }
     .product:hover {
       transform: scale(1.05);
-      box-shadow: 0 0 20px rgba(186, 85, 211, 0.8);
+      box-shadow: 0 0 15px rgba(186, 85, 211, 0.8);
     }
     .product img {
       width: 100%;
-      border-radius: 8px;
-      height: 100px;
-      object-fit: cover;
+      height: 80px;
+      border-radius: 6px;
+      object-fit: contain;
     }
     .price {
       color: #ffdbff;
       font-weight: bold;
-      font-size: 16px;
-      text-shadow: 0 0 10px rgba(186, 85, 211, 0.8);
+      font-size: 14px;
     }
     .add-to-cart {
       background: #b455d3;
       color: #fff;
       border: none;
-      padding: 5px 10px;
+      padding: 4px 8px;
       border-radius: 5px;
       cursor: pointer;
       box-shadow: 0 0 10px rgba(186, 85, 211, 0.5);
@@ -98,14 +107,14 @@
     }
     .add-to-cart:hover {
       background: #d46aff;
-      box-shadow: 0 0 20px rgba(186, 85, 211, 1);
+      box-shadow: 0 0 15px rgba(186, 85, 211, 1);
     }
     .cart {
-      flex: 0 0 300px;
+      flex: 0 0 260px;
       background: #181818;
-      padding: 15px;
-      border-radius: 12px;
-      box-shadow: 0 0 15px rgba(186, 85, 211, 0.4);
+      padding: 10px;
+      border-radius: 10px;
+      box-shadow: 0 0 12px rgba(186, 85, 211, 0.4);
       display: flex;
       flex-direction: column;
     }
@@ -113,30 +122,30 @@
       flex: 1;
       overflow-y: auto;
       margin-bottom: 10px;
-      max-height: 300px;
+      max-height: 250px;
     }
     .cart-item {
       display: flex;
       justify-content: space-between;
-      margin: 6px 0;
-      padding: 6px;
+      margin: 5px 0;
+      padding: 5px;
       background: #222;
-      border-radius: 6px;
-      font-size: 14px;
+      border-radius: 5px;
+      font-size: 13px;
     }
     .cart-item button {
       background: red;
       border: none;
       color: #fff;
       cursor: pointer;
-      padding: 2px 6px;
+      padding: 2px 5px;
       border-radius: 3px;
     }
     #checkout {
       background: #b455d3;
       border: none;
-      padding: 10px;
-      border-radius: 6px;
+      padding: 8px;
+      border-radius: 5px;
       color: #fff;
       font-weight: bold;
       cursor: pointer;
@@ -149,11 +158,11 @@
 </head>
 <body>
   <div class="breadcrumb">
-    <a href="index.html">Главная</a> / <span>Tacticool</span>
+    <a href="#">Главная</a> / <span>Tacticool</span>
   </div>
 
   <div class="game-header">
-    <img src="https://raw.githubusercontent.com/DonateTeam/DonateTeam/refs/heads/main/Tacticool.jpg" alt="Tacticool">
+    <img src="https://raw.githubusercontent.com/DonateTeam/DonateTeam/refs/heads/main/Tacticool.jpg" alt="Tacticool" />
     <div class="game-info">
       <h1>Tacticool</h1>
       <div class="buttons">
@@ -166,54 +175,77 @@
 
   <div class="shop-container">
     <div class="products">
-      <!-- 12 карточек -->
-      <div class="product" data-category="regular" data-name="27,000 + 3,000 gold" data-price="109.99">
-        <img src="https://raw.githubusercontent.com/DonateTeam/DonateTeam/refs/heads/main/27000%20%2B%203000%20золота.png">
-        <p>27,000 + 3,000 gold</p><p class="price">$109.99</p><button class="add-to-cart">+</button>
+      <div class="product" data-category="regular">
+        <img src="https://raw.githubusercontent.com/DonateTeam/DonateTeam/refs/heads/main/27000%20%2B%203000%20золота.png" alt="27000+3000 gold">
+        <p>27,000 + 3,000 gold</p>
+        <p class="price">$109.99</p>
+        <button class="add-to-cart">+</button>
       </div>
-      <div class="product" data-category="regular" data-name="13,000 + 1,500 gold" data-price="54.99">
-        <img src="https://raw.githubusercontent.com/DonateTeam/DonateTeam/refs/heads/main/13000%20%2B%201500%20золота.png">
-        <p>13,000 + 1,500 gold</p><p class="price">$54.99</p><button class="add-to-cart">+</button>
+      <div class="product" data-category="regular">
+        <img src="https://raw.githubusercontent.com/DonateTeam/DonateTeam/refs/heads/main/13000%20%2B%201500%20золота.png" alt="13000+1500 gold">
+        <p>13,000 + 1,500 gold</p>
+        <p class="price">$54.99</p>
+        <button class="add-to-cart">+</button>
       </div>
-      <div class="product" data-category="regular" data-name="5,000 + 500 gold" data-price="21.99">
-        <img src="https://raw.githubusercontent.com/DonateTeam/DonateTeam/refs/heads/main/5000%20%2B%20500%20золота.png">
-        <p>5,000 + 500 gold</p><p class="price">$21.99</p><button class="add-to-cart">+</button>
+      <div class="product" data-category="regular">
+        <img src="https://raw.githubusercontent.com/DonateTeam/DonateTeam/refs/heads/main/5000%20%2B%20500%20золота.png" alt="5000+500 gold">
+        <p>5,000 + 500 gold</p>
+        <p class="price">$21.99</p>
+        <button class="add-to-cart">+</button>
       </div>
-      <div class="product" data-category="regular" data-name="2,300 + 200 gold" data-price="10.99">
-        <img src="https://raw.githubusercontent.com/DonateTeam/DonateTeam/refs/heads/main/2300%20%2B%20200%20золота.png">
-        <p>2,300 + 200 gold</p><p class="price">$10.99</p><button class="add-to-cart">+</button>
+      <div class="product" data-category="regular">
+        <img src="https://raw.githubusercontent.com/DonateTeam/DonateTeam/refs/heads/main/2300%20%2B%20200%20золота.png" alt="2300+200 gold">
+        <p>2,300 + 200 gold</p>
+        <p class="price">$10.99</p>
+        <button class="add-to-cart">+</button>
       </div>
-      <div class="product" data-category="regular" data-name="600 + 50 gold" data-price="3.69">
-        <img src="https://raw.githubusercontent.com/DonateTeam/DonateTeam/refs/heads/main/600%20%2B%2050%20золота.png">
-        <p>600 + 50 gold</p><p class="price">$3.69</p><button class="add-to-cart">+</button>
+      <div class="product" data-category="regular">
+        <img src="https://raw.githubusercontent.com/DonateTeam/DonateTeam/refs/heads/main/600%20%2B%2050%20золота.png" alt="600+50 gold">
+        <p>600 + 50 gold</p>
+        <p class="price">$3.69</p>
+        <button class="add-to-cart">+</button>
       </div>
-      <div class="product" data-category="limited" data-name="Elite Clan Pass +13,000 Clan Pass Points" data-price="12.49">
-        <img src="https://raw.githubusercontent.com/DonateTeam/DonateTeam/refs/heads/main/Elite%20Clan%20Pass.png">
-        <p>Elite Clan Pass +13,000 Clan Pass Points</p><p class="price">$12.49</p><button class="add-to-cart">+</button>
+      <div class="product" data-category="limited">
+        <img src="https://raw.githubusercontent.com/DonateTeam/DonateTeam/refs/heads/main/450000%20%2B%2045000%20серебра.png" alt="450000+45000 Silver">
+        <p>450,000 + 45,000 Silver</p>
+        <p class="price">$16.99</p>
+        <button class="add-to-cart">+</button>
       </div>
-      <div class="product" data-category="regular" data-name="10,000 Clan Pass Points" data-price="5.99">
-        <img src="https://raw.githubusercontent.com/DonateTeam/DonateTeam/refs/heads/main/Clan%20Pass%20Points.png">
-        <p>10,000 Clan Pass Points</p><p class="price">$5.99</p><button class="add-to-cart">+</button>
+      <div class="product" data-category="regular">
+        <img src="https://raw.githubusercontent.com/DonateTeam/DonateTeam/refs/heads/main/1500000%20%2B%20150000%20серебра.png" alt="1500000+150000 Silver">
+        <p>1,500,000 + 150,000 Silver</p>
+        <p class="price">$54.99</p>
+        <button class="add-to-cart">+</button>
       </div>
-      <div class="product" data-category="regular" data-name="3,000,000 + 300,000 Silver" data-price="99.99">
-        <img src="https://raw.githubusercontent.com/DonateTeam/DonateTeam/refs/heads/main/3000000%20%2B%20300000%20серебра.png">
-        <p>3,000,000 + 300,000 Silver</p><p class="price">$99.99</p><button class="add-to-cart">+</button>
+      <div class="product" data-category="regular">
+        <img src="https://raw.githubusercontent.com/DonateTeam/DonateTeam/refs/heads/main/3000000%20%2B%20300000%20серебра.png" alt="3000000+300000 Silver">
+        <p>3,000,000 + 300,000 Silver</p>
+        <p class="price">$99.99</p>
+        <button class="add-to-cart">+</button>
       </div>
-      <div class="product" data-category="regular" data-name="1,500,000 + 150,000 Silver" data-price="54.99">
-        <img src="https://raw.githubusercontent.com/DonateTeam/DonateTeam/refs/heads/main/1500000%20%2B%20150000%20серебра.png">
-        <p>1,500,000 + 150,000 Silver</p><p class="price">$54.99</p><button class="add-to-cart">+</button>
+      <div class="product" data-category="regular">
+        <img src="https://raw.githubusercontent.com/DonateTeam/DonateTeam/refs/heads/main/110000%20%2B%2011000%20серебра.png" alt="110000+11000 Silver">
+        <p>110,000 + 11,000 Silver</p>
+        <p class="price">$4.99</p>
+        <button class="add-to-cart">+</button>
       </div>
-      <div class="product" data-category="regular" data-name="450,000 + 45,000 Silver" data-price="16.99">
-        <img src="https://raw.githubusercontent.com/DonateTeam/DonateTeam/refs/heads/main/450000%20%2B%2045000%20серебра.png">
-        <p>450,000 + 45,000 Silver</p><p class="price">$16.99</p><button class="add-to-cart">+</button>
+      <div class="product" data-category="regular">
+        <img src="https://raw.githubusercontent.com/DonateTeam/DonateTeam/refs/heads/main/22000%20%2B%202200%20серебра.png" alt="22000+2200 Silver">
+        <p>22,000 + 2,200 Silver</p>
+        <p class="price">$1.19</p>
+        <button class="add-to-cart">+</button>
       </div>
-      <div class="product" data-category="regular" data-name="110,000 + 11,000 Silver" data-price="4.99">
-        <img src="https://raw.githubusercontent.com/DonateTeam/DonateTeam/refs/heads/main/110000%20%2B%2011000%20серебра.png">
-        <p>110,000 + 11,000 Silver</p><p class="price">$4.99</p><button class="add-to-cart">+</button>
+      <div class="product" data-category="limited">
+        <img src="https://raw.githubusercontent.com/DonateTeam/DonateTeam/refs/heads/main/Tacticool.jpg" alt="Elite Clan Pass">
+        <p>Elite Clan Pass +13,000 Clan Pass Points</p>
+        <p class="price">$12.49</p>
+        <button class="add-to-cart">+</button>
       </div>
-      <div class="product" data-category="regular" data-name="22,000 + 2,200 Silver" data-price="1.19">
-        <img src="https://raw.githubusercontent.com/DonateTeam/DonateTeam/refs/heads/main/22000%20%2B%202200%20серебра.png">
-        <p>22,000 + 2,200 Silver</p><p class="price">$1.19</p><button class="add-to-cart">+</button>
+      <div class="product" data-category="limited">
+        <img src="https://raw.githubusercontent.com/DonateTeam/DonateTeam/refs/heads/main/Tacticool.jpg" alt="Clan Pass Points">
+        <p>10,000 Clan Pass Points</p>
+        <p class="price">$5.99</p>
+        <button class="add-to-cart">+</button>
       </div>
     </div>
 
@@ -225,38 +257,49 @@
   </div>
 
   <script>
-    document.addEventListener("DOMContentLoaded", () => {
-      const btns = document.querySelectorAll(".filter-btn");
-      const prods = document.querySelectorAll(".product");
-      const cartItems = document.querySelector(".cart-items");
-      const cartTotal = document.querySelector("#cart-total");
-      let total = 0;
+    const buttons = document.querySelectorAll('.filter-btn');
+    const products = document.querySelectorAll('.product');
 
-      btns.forEach(b => {
-        b.addEventListener("click", () => {
-          btns.forEach(x => x.classList.remove("active"));
-          b.classList.add("active");
-          const f = b.dataset.filter;
-          prods.forEach(p => p.style.display = (f === "all" || p.dataset.category === f) ? "block" : "none");
+    buttons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        buttons.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+
+        const filter = btn.dataset.filter;
+        products.forEach(p => {
+          if (filter === 'all' || p.dataset.category === filter) {
+            p.style.display = 'block';
+          } else {
+            p.style.display = 'none';
+          }
         });
       });
+    });
 
-      prods.forEach(p => {
-        p.querySelector(".add-to-cart").onclick = () => {
-          const price = parseFloat(p.dataset.price);
-          const name = p.dataset.name;
-          total += price;
-          let div = document.createElement("div");
-          div.className = "cart-item";
-          div.innerHTML = `${name} - $${price.toFixed(2)} <button>✖</button>`;
-          div.querySelector("button").onclick = () => {
-            total -= price;
-            div.remove();
-            cartTotal.textContent = `$${total.toFixed(2)}`;
-          };
-          cartItems.appendChild(div);
+    const cartItems = document.querySelector('.cart-items');
+    const cartTotal = document.getElementById('cart-total');
+    let total = 0;
+
+    document.querySelectorAll('.add-to-cart').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const product = btn.parentElement;
+        const name = product.querySelector('p').textContent;
+        const priceText = product.querySelector('.price').textContent.replace('$', '');
+        const price = parseFloat(priceText);
+
+        total += price;
+        cartTotal.textContent = `$${total.toFixed(2)}`;
+
+        const item = document.createElement('div');
+        item.classList.add('cart-item');
+        item.innerHTML = `${name} - $${price.toFixed(2)} <button>×</button>`;
+        item.querySelector('button').addEventListener('click', () => {
+          total -= price;
           cartTotal.textContent = `$${total.toFixed(2)}`;
-        };
+          item.remove();
+        });
+
+        cartItems.appendChild(item);
       });
     });
   </script>
