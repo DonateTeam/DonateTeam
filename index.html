@@ -13,7 +13,6 @@
       padding: 0;
     }
 
-    /* Шапка */
     .header img {
       display: block;
       margin: 20px auto;
@@ -22,7 +21,6 @@
       max-width: 1200px;
     }
 
-    /* Хлебные крошки */
     .breadcrumb {
       text-align: left;
       margin: 10px 5%;
@@ -38,7 +36,7 @@
       color: #fff;
     }
 
-    /* Кнопки */
+    /* Фиолетовые кнопки */
     .buttons {
       margin: 20px 0;
       text-align: center;
@@ -47,7 +45,7 @@
     .buttons button {
       background: none;
       color: white;
-      border: 2px solid #d1ff00;
+      border: 2px solid #b800d8;
       border-radius: 8px;
       padding: 10px 20px;
       margin: 5px;
@@ -58,11 +56,10 @@
 
     .buttons button.active,
     .buttons button:hover {
-      background: #d1ff00;
-      color: black;
+      background: #b800d8;
+      color: white;
     }
 
-    /* Магазин */
     .shop-container {
       display: flex;
       gap: 20px;
@@ -116,7 +113,6 @@
       background: #d44aff;
     }
 
-    /* Корзина */
     .cart {
       flex: 1;
       background: #181818;
@@ -169,24 +165,20 @@
   </style>
 </head>
 <body>
-  <!-- Шапка -->
   <div class="header">
     <img src="tacticool.jpg" alt="Tacticool" />
   </div>
 
-  <!-- Хлебные крошки -->
   <div class="breadcrumb">
     <a href="index.html">Главная</a> / <span>Tacticool</span>
   </div>
 
-  <!-- Кнопки фильтра -->
   <div class="buttons">
     <button class="filter-btn active" data-filter="all">Все товары</button>
     <button class="filter-btn" data-filter="limited">Лимитированная коллекция</button>
     <button class="filter-btn" data-filter="regular">Товары</button>
   </div>
 
-  <!-- Магазин -->
   <div class="shop-container">
     <div class="products">
       <div class="product" data-category="regular" data-name="Товар 1" data-price="100">
@@ -215,7 +207,6 @@
       </div>
     </div>
 
-    <!-- Корзина -->
     <div class="cart">
       <h3>🛒 Корзина <span id="cart-total">0 ₽</span></h3>
       <div class="cart-items"></div>
@@ -231,7 +222,6 @@
       const cartTotal = document.querySelector("#cart-total");
       let total = 0;
 
-      // Фильтр
       buttons.forEach(btn => {
         btn.addEventListener("click", () => {
           buttons.forEach(b => b.classList.remove("active"));
@@ -247,7 +237,6 @@
         });
       });
 
-      // Корзина
       function updateTotal() {
         cartTotal.textContent = total + " ₽";
       }
