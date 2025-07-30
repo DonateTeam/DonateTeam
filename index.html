@@ -11,23 +11,11 @@
       font-family: Arial, sans-serif;
       margin: 0;
       padding: 0;
-      min-height: 100vh;
-    }
-
-    .header img {
-      display: block;
-      width: 95%;
-      max-width: 1400px;
-      height: 350px;
-      object-fit: cover;
-      margin: 20px auto;
-      border-radius: 25px;
     }
 
     .breadcrumb {
-      text-align: left;
-      margin: 10px 5%;
-      font-size: 18px;
+      font-size: 14px;
+      margin: 15px 30px;
     }
 
     .breadcrumb a {
@@ -39,27 +27,49 @@
       color: #fff;
     }
 
+    .game-header {
+      display: flex;
+      align-items: center;
+      margin: 0 30px;
+    }
+
+    .game-header img {
+      width: 80px;
+      height: 80px;
+      border-radius: 20px;
+      margin-right: 20px;
+      object-fit: cover;
+      box-shadow: 0 0 10px rgba(186, 85, 211, 0.7);
+    }
+
+    .game-info h1 {
+      font-size: 32px;
+      margin: 0;
+      text-shadow: 0 0 10px rgba(186, 85, 211, 0.8);
+    }
+
     .buttons {
-      margin: 20px 0;
-      text-align: center;
+      margin-top: 10px;
     }
 
     .buttons button {
-      background: none;
+      background: transparent;
       color: white;
-      border: 2px solid #9BB7D4;
+      border: 2px solid #b455d3;
       border-radius: 8px;
-      padding: 10px 20px;
-      margin: 5px;
+      padding: 8px 16px;
+      margin-right: 8px;
       cursor: pointer;
-      font-size: 16px;
-      transition: 0.2s;
+      font-size: 14px;
+      transition: 0.3s;
+      box-shadow: 0 0 10px rgba(186, 85, 211, 0.3);
     }
 
     .buttons button.active,
     .buttons button:hover {
-      background: #9BB7D4;
+      background: #b455d3;
       color: white;
+      box-shadow: 0 0 20px rgba(186, 85, 211, 0.8);
     }
 
     .shop-container {
@@ -72,7 +82,7 @@
 
     .products {
       display: grid;
-      grid-template-columns: repeat(6, 1fr); /* 6 в ряд */
+      grid-template-columns: repeat(6, 1fr);
       gap: 20px;
       flex: 2;
     }
@@ -83,6 +93,12 @@
       border-radius: 10px;
       text-align: center;
       transition: 0.3s;
+      box-shadow: 0 0 10px rgba(186, 85, 211, 0.2);
+    }
+
+    .product:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 20px rgba(186, 85, 211, 0.7);
     }
 
     .product img {
@@ -91,87 +107,43 @@
     }
 
     .price {
-      color: #ffe600;
+      color: #ffdbff;
       font-weight: bold;
+      text-shadow: 0 0 10px rgba(186, 85, 211, 0.8);
     }
 
     .add-to-cart {
-      background: #9BB7D4;
+      background: #b455d3;
       color: white;
       border: none;
       padding: 6px 10px;
       border-radius: 5px;
       cursor: pointer;
+      transition: 0.3s;
+      box-shadow: 0 0 10px rgba(186, 85, 211, 0.5);
     }
 
     .add-to-cart:hover {
-      background: #7aa0c5;
-    }
-
-    .cart {
-      flex: 1;
-      background: #181818;
-      padding: 15px;
-      border-radius: 12px;
-      max-height: 450px;
-      display: flex;
-      flex-direction: column;
-      box-shadow: 0 0 15px rgba(155, 183, 212, 0.3);
-    }
-
-    .cart-items {
-      flex: 1;
-      overflow-y: auto;
-      margin-bottom: 10px;
-    }
-
-    .cart-item {
-      display: flex;
-      justify-content: space-between;
-      margin: 6px 0;
-      padding: 6px;
-      background: #222;
-      border-radius: 6px;
-      font-size: 14px;
-    }
-
-    .cart-item button {
-      background: red;
-      color: white;
-      border: none;
-      cursor: pointer;
-      padding: 2px 6px;
-      border-radius: 3px;
-    }
-
-    #checkout {
-      background: #9BB7D4;
-      border: none;
-      padding: 10px;
-      cursor: pointer;
-      border-radius: 6px;
-      font-weight: bold;
-      color: white;
-    }
-
-    #checkout:hover {
-      background: #7aa0c5;
+      background: #d46aff;
+      box-shadow: 0 0 20px rgba(186, 85, 211, 1);
     }
   </style>
 </head>
 <body>
-  <div class="header">
-    <img src="https://raw.githubusercontent.com/DonateTeam/DonateTeam/refs/heads/main/Tacticool.jpg" alt="Tacticool" />
-  </div>
-
   <div class="breadcrumb">
     <a href="index.html">Главная</a> / <span>Tacticool</span>
   </div>
 
-  <div class="buttons">
-    <button class="filter-btn active" data-filter="all">Все товары</button>
-    <button class="filter-btn" data-filter="limited">Лимитированная коллекция</button>
-    <button class="filter-btn" data-filter="regular">Товары</button>
+  <div class="game-header">
+    <img src="https://raw.githubusercontent.com/DonateTeam/DonateTeam/refs/heads/main/Tacticool.jpg" alt="Tacticool" />
+    <div class="game-info">
+      <h1>Tacticool</h1>
+      <div class="buttons">
+        <button class="filter-btn active" data-filter="all">Все товары</button>
+        <button class="filter-btn" data-filter="limited">Лимитированная коллекция</button>
+        <button class="filter-btn" data-filter="regular">Товары</button>
+      </div>
+    </div>
   </div>
 
   <div class="shop-container">
@@ -260,21 +232,12 @@
         <button class="add-to-cart">+</button>
       </div>
     </div>
-
-    <div class="cart">
-      <h3>🛒 Корзина <span id="cart-total">0 ₽</span></h3>
-      <div class="cart-items"></div>
-      <button id="checkout">Перейти к оплате</button>
-    </div>
   </div>
 
   <script>
     document.addEventListener("DOMContentLoaded", () => {
       const buttons = document.querySelectorAll(".filter-btn");
       const products = document.querySelectorAll(".product");
-      const cartItems = document.querySelector(".cart-items");
-      const cartTotal = document.querySelector("#cart-total");
-      let total = 0;
 
       buttons.forEach(btn => {
         btn.addEventListener("click", () => {
@@ -286,33 +249,9 @@
           });
         });
       });
-
-      function updateTotal() {
-        cartTotal.textContent = "$ " + total.toFixed(2);
-      }
-
-      function addToCart(name, price) {
-        const item = document.createElement("div");
-        item.classList.add("cart-item");
-        item.innerHTML = `${name} - $${price.toFixed(2)} <button>✖</button>`;
-        item.querySelector("button").addEventListener("click", () => {
-          total -= price;
-          item.remove();
-          updateTotal();
-        });
-        cartItems.appendChild(item);
-        total += price;
-        updateTotal();
-      }
-
-      document.querySelectorAll(".add-to-cart").forEach(btn => {
-        btn.addEventListener("click", e => {
-          const product = e.target.closest(".product");
-          addToCart(product.dataset.name, parseFloat(product.dataset.price));
-        });
-      });
     });
   </script>
 </body>
 </html>
+
 
