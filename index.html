@@ -12,16 +12,9 @@
       margin: 0;
       padding: 0;
     }
-
-    /* Хлебные крошки */
-    .breadcrumb {
-      margin: 15px 40px;
-      font-size: 16px;
-    }
+    .breadcrumb { margin: 15px 40px; font-size: 16px; }
     .breadcrumb a { color: #bbb; text-decoration: none; }
     .breadcrumb a:hover { color: #fff; }
-
-    /* Шапка */
     .game-header {
       display: flex;
       align-items: center;
@@ -40,8 +33,6 @@
       margin: 0;
       text-shadow: 0 0 12px rgba(186, 85, 211, 0.9);
     }
-
-    /* Кнопки фильтра */
     .buttons { margin-top: 12px; }
     .buttons button {
       background: none;
@@ -59,24 +50,18 @@
       background: #b455d3;
       box-shadow: 0 0 22px rgba(186, 85, 211, 0.9);
     }
-
-    /* Контейнер магазина */
     .shop-container {
       display: flex;
       justify-content: space-between;
       align-items: flex-start;
       padding: 20px 40px;
     }
-
-    /* Сетка товаров */
     .products {
       display: grid;
       grid-template-columns: repeat(6, 1fr);
       gap: 15px;
       flex: 2;
     }
-
-    /* Карточка товара */
     .product {
       background: #111;
       padding: 8px;
@@ -115,8 +100,6 @@
       background: #d46aff;
       box-shadow: 0 0 20px rgba(186, 85, 211, 1);
     }
-
-    /* Корзина */
     .cart {
       flex: 0 0 300px;
       background: #181818;
@@ -183,20 +166,55 @@
 
   <div class="shop-container">
     <div class="products">
-      <!-- Пример товаров -->
+      <!-- 12 карточек -->
       <div class="product" data-category="regular" data-name="27,000 + 3,000 gold" data-price="109.99">
-        <img src="https://via.placeholder.com/150" alt="">
-        <p>27,000 + 3,000 gold</p>
-        <p class="price">$109.99</p>
-        <button class="add-to-cart">+</button>
+        <img src="https://raw.githubusercontent.com/DonateTeam/DonateTeam/refs/heads/main/27000%20%2B%203000%20золота.png">
+        <p>27,000 + 3,000 gold</p><p class="price">$109.99</p><button class="add-to-cart">+</button>
       </div>
       <div class="product" data-category="regular" data-name="13,000 + 1,500 gold" data-price="54.99">
-        <img src="https://via.placeholder.com/150" alt="">
-        <p>13,000 + 1,500 gold</p>
-        <p class="price">$54.99</p>
-        <button class="add-to-cart">+</button>
+        <img src="https://raw.githubusercontent.com/DonateTeam/DonateTeam/refs/heads/main/13000%20%2B%201500%20золота.png">
+        <p>13,000 + 1,500 gold</p><p class="price">$54.99</p><button class="add-to-cart">+</button>
       </div>
-      <!-- Добавь остальные карточки -->
+      <div class="product" data-category="regular" data-name="5,000 + 500 gold" data-price="21.99">
+        <img src="https://raw.githubusercontent.com/DonateTeam/DonateTeam/refs/heads/main/5000%20%2B%20500%20золота.png">
+        <p>5,000 + 500 gold</p><p class="price">$21.99</p><button class="add-to-cart">+</button>
+      </div>
+      <div class="product" data-category="regular" data-name="2,300 + 200 gold" data-price="10.99">
+        <img src="https://raw.githubusercontent.com/DonateTeam/DonateTeam/refs/heads/main/2300%20%2B%20200%20золота.png">
+        <p>2,300 + 200 gold</p><p class="price">$10.99</p><button class="add-to-cart">+</button>
+      </div>
+      <div class="product" data-category="regular" data-name="600 + 50 gold" data-price="3.69">
+        <img src="https://raw.githubusercontent.com/DonateTeam/DonateTeam/refs/heads/main/600%20%2B%2050%20золота.png">
+        <p>600 + 50 gold</p><p class="price">$3.69</p><button class="add-to-cart">+</button>
+      </div>
+      <div class="product" data-category="limited" data-name="Elite Clan Pass +13,000 Clan Pass Points" data-price="12.49">
+        <img src="https://raw.githubusercontent.com/DonateTeam/DonateTeam/refs/heads/main/Elite%20Clan%20Pass.png">
+        <p>Elite Clan Pass +13,000 Clan Pass Points</p><p class="price">$12.49</p><button class="add-to-cart">+</button>
+      </div>
+      <div class="product" data-category="regular" data-name="10,000 Clan Pass Points" data-price="5.99">
+        <img src="https://raw.githubusercontent.com/DonateTeam/DonateTeam/refs/heads/main/Clan%20Pass%20Points.png">
+        <p>10,000 Clan Pass Points</p><p class="price">$5.99</p><button class="add-to-cart">+</button>
+      </div>
+      <div class="product" data-category="regular" data-name="3,000,000 + 300,000 Silver" data-price="99.99">
+        <img src="https://raw.githubusercontent.com/DonateTeam/DonateTeam/refs/heads/main/3000000%20%2B%20300000%20серебра.png">
+        <p>3,000,000 + 300,000 Silver</p><p class="price">$99.99</p><button class="add-to-cart">+</button>
+      </div>
+      <div class="product" data-category="regular" data-name="1,500,000 + 150,000 Silver" data-price="54.99">
+        <img src="https://raw.githubusercontent.com/DonateTeam/DonateTeam/refs/heads/main/1500000%20%2B%20150000%20серебра.png">
+        <p>1,500,000 + 150,000 Silver</p><p class="price">$54.99</p><button class="add-to-cart">+</button>
+      </div>
+      <div class="product" data-category="regular" data-name="450,000 + 45,000 Silver" data-price="16.99">
+        <img src="https://raw.githubusercontent.com/DonateTeam/DonateTeam/refs/heads/main/450000%20%2B%2045000%20серебра.png">
+        <p>450,000 + 45,000 Silver</p><p class="price">$16.99</p><button class="add-to-cart">+</button>
+      </div>
+      <div class="product" data-category="regular" data-name="110,000 + 11,000 Silver" data-price="4.99">
+        <img src="https://raw.githubusercontent.com/DonateTeam/DonateTeam/refs/heads/main/110000%20%2B%2011000%20серебра.png">
+        <p>110,000 + 11,000 Silver</p><p class="price">$4.99</p><button class="add-to-cart">+</button>
+      </div>
+      <div class="product" data-category="regular" data-name="22,000 + 2,200 Silver" data-price="1.19">
+        <img src="https://raw.githubusercontent.com/DonateTeam/DonateTeam/refs/heads/main/22000%20%2B%202200%20серебра.png">
+        <p>22,000 + 2,200 Silver</p><p class="price">$1.19</p><button class="add-to-cart">+</button>
+      </div>
     </div>
 
     <div class="cart">
