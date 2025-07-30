@@ -1,47 +1,78 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Магазин Super SUS</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Super SUS</title>
   <style>
-    :root {
-      --bg-color: #000;
-      --card-bg: #111;
-      --text-color: #fff;
-      --accent-color: #b800d8;
-      --price-color: #ffe600;
-    }
-
     body {
-      background: var(--bg-color);
-      color: var(--text-color);
-      font-family: Arial, sans-serif;
       margin: 0;
-      padding: 20px;
+      font-family: Arial, sans-serif;
+      background: #0b0b0b;
+      color: #fff;
     }
 
-    .shop-container {
+    header {
       display: flex;
-      gap: 20px;
-      flex-wrap: wrap;
+      align-items: center;
+      padding: 20px;
+      background: #0b0b0b;
+    }
+
+    header img {
+      width: 60px;
+      border-radius: 12px;
+      margin-right: 15px;
+    }
+
+    header h1 {
+      font-size: 28px;
+      font-weight: bold;
+      margin-right: 30px;
+    }
+
+    nav {
+      display: flex;
+      gap: 10px;
+    }
+
+    nav button {
+      background: #111;
+      color: #fff;
+      border: none;
+      padding: 10px 16px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: 0.2s;
+    }
+
+    nav button:hover {
+      background: #222;
+    }
+
+    .container {
+      display: flex;
       justify-content: center;
+      align-items: flex-start;
+      gap: 20px;
+      padding: 20px;
     }
 
     .products {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-      gap: 15px;
+      gap: 20px;
       flex: 2;
     }
 
     .product {
-      background: var(--card-bg);
+      background: #111;
       padding: 15px;
       border-radius: 12px;
       text-align: center;
-      transition: transform 0.2s ease, box-shadow 0.3s ease;
       box-shadow: 0 0 10px rgba(184, 0, 216, 0.3);
+      transition: transform 0.2s ease, box-shadow 0.3s ease;
     }
 
     .product:hover {
@@ -50,24 +81,25 @@
     }
 
     .product img {
-      max-width: 100%;
-      height: 100px;
+      width: 80px;
+      height: 80px;
       object-fit: contain;
     }
 
     .title {
-      font-weight: bold;
       margin: 10px 0 5px;
+      font-weight: bold;
     }
 
     .price {
-      color: var(--price-color);
+      color: #d7ff48;
       margin-bottom: 10px;
-      font-size: 18px;
+      font-size: 16px;
+      font-weight: bold;
     }
 
     .add-to-cart {
-      background: var(--accent-color);
+      background: #b800d8;
       color: white;
       border: none;
       padding: 8px 14px;
@@ -82,14 +114,22 @@
     }
 
     .cart {
-      flex: 1;
-      background: #181818;
-      padding: 15px;
+      background: #111;
+      padding: 20px;
       border-radius: 12px;
-      max-height: 450px;
+      width: 280px;
+      max-height: 500px;
       display: flex;
       flex-direction: column;
       box-shadow: 0 0 15px rgba(184, 0, 216, 0.3);
+    }
+
+    .cart h3 {
+      margin-top: 0;
+      font-size: 18px;
+      display: flex;
+      align-items: center;
+      gap: 5px;
     }
 
     .cart-items {
@@ -118,9 +158,9 @@
     }
 
     #checkout {
-      background: var(--accent-color);
+      background: #b800d8;
       border: none;
-      padding: 10px;
+      padding: 12px;
       cursor: pointer;
       border-radius: 6px;
       font-weight: bold;
@@ -134,24 +174,35 @@
   </style>
 </head>
 <body>
-  <div class="shop-container">
+  <header>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/7/7e/Among_Us_icon.png" alt="logo" />
+    <h1>Super SUS</h1>
+    <nav>
+      <button>Все товары</button>
+      <button>Карты</button>
+      <button>Золотые звезды</button>
+      <button>Пропуски</button>
+    </nav>
+  </header>
+
+  <div class="container">
     <div class="products">
       <div class="product" data-name="Супер пропуск" data-price="386">
-        <img src="https://via.placeholder.com/150" alt="Супер пропуск" />
+        <img src="https://via.placeholder.com/80" alt="Супер пропуск" />
         <p class="title">Супер пропуск</p>
         <p class="price">386 ₽</p>
         <button class="add-to-cart">+</button>
       </div>
 
       <div class="product" data-name="Набор Супер пропуска" data-price="721">
-        <img src="https://via.placeholder.com/150" alt="Набор Супер пропуска" />
+        <img src="https://via.placeholder.com/80" alt="Набор Супер пропуска" />
         <p class="title">Набор Супер пропуска</p>
         <p class="price">721 ₽</p>
         <button class="add-to-cart">+</button>
       </div>
 
       <div class="product" data-name="100 Звёзд" data-price="75">
-        <img src="https://via.placeholder.com/150" alt="100 Звёзд" />
+        <img src="https://via.placeholder.com/80" alt="100 Звёзд" />
         <p class="title">100 Золотые звёзды</p>
         <p class="price">75 ₽</p>
         <button class="add-to-cart">+</button>
