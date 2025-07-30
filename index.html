@@ -36,7 +36,7 @@
       color: #fff;
     }
 
-    /* Фиолетовые кнопки */
+    /* Кнопки Cerulean */
     .buttons {
       margin: 20px 0;
       text-align: center;
@@ -45,7 +45,7 @@
     .buttons button {
       background: none;
       color: white;
-      border: 2px solid #b800d8;
+      border: 2px solid #9BB7D4; /* обводка Cerulean */
       border-radius: 8px;
       padding: 10px 20px;
       margin: 5px;
@@ -56,7 +56,7 @@
 
     .buttons button.active,
     .buttons button:hover {
-      background: #b800d8;
+      background: #9BB7D4; /* заливка Cerulean */
       color: white;
     }
 
@@ -101,7 +101,7 @@
     }
 
     .add-to-cart {
-      background: #b800d8;
+      background: #9BB7D4; /* кнопка добавления */
       color: white;
       border: none;
       padding: 6px 10px;
@@ -110,7 +110,7 @@
     }
 
     .add-to-cart:hover {
-      background: #d44aff;
+      background: #7aa0c5; /* чуть темнее при наведении */
     }
 
     .cart {
@@ -121,7 +121,7 @@
       max-height: 450px;
       display: flex;
       flex-direction: column;
-      box-shadow: 0 0 15px rgba(184, 0, 216, 0.3);
+      box-shadow: 0 0 15px rgba(155, 183, 212, 0.3);
     }
 
     .cart-items {
@@ -150,7 +150,7 @@
     }
 
     #checkout {
-      background: #b800d8;
+      background: #9BB7D4;
       border: none;
       padding: 10px;
       cursor: pointer;
@@ -160,7 +160,7 @@
     }
 
     #checkout:hover {
-      background: #d44aff;
+      background: #7aa0c5;
     }
   </style>
 </head>
@@ -228,11 +228,7 @@
           btn.classList.add("active");
           const filter = btn.dataset.filter;
           products.forEach(prod => {
-            if (filter === "all" || prod.dataset.category === filter) {
-              prod.style.display = "block";
-            } else {
-              prod.style.display = "none";
-            }
+            prod.style.display = (filter === "all" || prod.dataset.category === filter) ? "block" : "none";
           });
         });
       });
@@ -265,4 +261,3 @@
   </script>
 </body>
 </html>
-
